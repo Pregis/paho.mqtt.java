@@ -28,7 +28,7 @@ public class SSLNetworkModuleFactory implements NetworkModuleFactory {
 
 	@Override
 	public Set<String> getSupportedUriSchemes() {
-		return Collections.unmodifiableSet(new HashSet<>(Arrays.asList("ssl")));
+		return Collections.unmodifiableSet(new HashSet<>(Arrays.asList("ssl", "mqtts")));
 	}
 
 	@Override

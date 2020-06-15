@@ -596,7 +596,8 @@ public class MqttAsyncClient implements IMqttAsyncClient {
 			throws MqttException, MqttSecurityException {
 		final String methodName = "connect";
 		if (comms.isConnected()) {
-			throw ExceptionHelper.createMqttException(MqttException.REASON_CODE_CLIENT_CONNECTED);
+			callback.onSuccess(null);
+			return null;
 		}
 		if (comms.isConnecting()) {
 			throw new MqttException(MqttException.REASON_CODE_CONNECT_IN_PROGRESS);
